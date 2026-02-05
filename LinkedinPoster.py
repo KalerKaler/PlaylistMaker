@@ -10,7 +10,7 @@ def get_duration(lis:list)->dict:
         info_dict[item[1]]=(audio.info.length,item[0])
     return info_dict
 
-print(f"{"Playlister by KalerKaler":*^50}")
+print(f"{"PlaylistMaker by KalerKaler":*^40}")
 
 music_paths = list(pathlib.Path('.').rglob("*.mp3"))
 # print(music_paths)
@@ -45,7 +45,7 @@ with open(english_playlist_name+".m3u","w") as eng:
 
 japanese_duration_dict=get_duration(jp)
 japanese_playlist_name=input("Enter the name for the Japanese playlist file\n")
-with open(japanese_playlist_name+".m3u","w") as jp:
+with open(japanese_playlist_name+".m3u","w",encoding="UTF-8") as jp:
     jp.write("#EXTM3U\n")
     # print(japanese_duration_dict)
     # exit()
